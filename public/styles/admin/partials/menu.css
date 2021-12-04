@@ -1,0 +1,17 @@
+/* public/styles/admin/partials/menu.css */
+.Menu{
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-gap: 15px;
+    align-items: center;
+}
+
+.Menu img{
+    width: 100%;
+}
+
+.Menu .label{
+    font: 19px/1.5 Oswald, Bayon;
+    color: var(--background);
+    width: auto;
+}

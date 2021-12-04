@@ -1,0 +1,38 @@
+/* public/styles/admin/partials/header.css */
+.Header{
+    background: var(--background);
+    color: white;
+}
+
+.Header a{
+    color: lavender;
+}
+
+.Header .wrapper{
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.Header .wrapper .logo{
+    font: 30px/1.5 Oswald, Limonf3;
+}
+
+.Header .wrapper form{
+    display: grid;
+    grid-template-columns: 20% auto 15%;
+}
+
+.Header .wrapper input, .Header .wrapper select{
+    font: var(--body-font);
+}
+
+.Header .wrapper input{
+    padding: 0 10px;
+}
+
+.Header .wrapper .logout{
+    text-align: right;
+    font-size: 18px;
+}

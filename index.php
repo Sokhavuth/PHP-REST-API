@@ -26,6 +26,7 @@ if($localhost){
         $db_user,
         $db_password
     );
+    [\PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8;'];
 
     $f3->set('DB', $db);
 }
