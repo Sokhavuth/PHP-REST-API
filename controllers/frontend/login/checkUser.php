@@ -2,29 +2,21 @@
 //controllers/frontend/login/checkUser.php
 
 function checkUser($f3){
-    $collection = $f3->get('DB')->users;
-    $user = $collection->findOne(['email'=>$f3->get('POST.email')]);
-
-    require_once('setting.php');
+    $user=new DB\SQL\Mapper($f3->get('DB'),'users');
+    $user->load(array('email=? AND password=?',$f3->get('POST.email'),md5($f3->get('POST.password'))));
+    
+    require('setting.php');
     $f3->mset([
         'appName'=>$setting['siteTitle'], 
-        'title'=>'ទំព័រ​ដើម', 
+        'pageTitle'=>'ទំព័រ​លការផ្សាយ', 
         'date'=>$setting['date']
     ]);
-        
-    if($user){
-        $password = $collection->findOne(['password'=>$f3->get('POST.password')]);
-        if($password){
-            $f3->set('SESSION.email', $user['email']);
-            $f3->reroute('/admin');
-        }else{
-            $f3->set('message', 'ពាក្យ​សំងាត់​មិនត្រឹមត្រូវ​ទេ');
-            $view = new View;
-            echo $view->render('views/login.php');
-        }
+
+    if($user->userID){
+        $f3->set('SESSION.userID', $user->userID);
+        $f3->reroute('/backend/post');
     }else{
-        $f3->set('message', 'Email ​មិនត្រឹមត្រូវ​ទេ');
-        $view = new View;
-        echo $view->render('views/login.php');
+        $f3->set('message', 'Email និងឬ​ ពាក្យ​សំងាត់​​មិនត្រឹមត្រូវ​ទេ!');
+        echo View::instance()->render('views/frontend/login.html');
     }
 }
