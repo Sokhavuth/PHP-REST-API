@@ -1,0 +1,7 @@
+/*public/styles/backend/post.css*/
+
+.Main{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 25% auto;
+}

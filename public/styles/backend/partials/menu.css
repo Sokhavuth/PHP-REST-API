@@ -1,17 +1,21 @@
 /* public/styles/admin/partials/menu.css */
 .Menu{
+    padding-right: 20px;
+}
+.Menu .wrapper{
     display: grid;
-    grid-template-columns: 15% auto;
-    grid-gap: 15px;
+    grid-template-columns: 20% auto;
+    grid-gap: 20px;
     align-items: center;
+    background: var(--background);
+    padding: 20px
 }
 
-.Menu img{
+.Menu .wrapper img{
     width: 100%;
 }
 
-.Menu .label{
-    font: 19px/1.5 Oswald, Bayon;
-    color: var(--background);
-    width: auto;
+.Menu .wrapper .label{
+    font: 18px/1.5 Oswald, Koulen;
+    color: white;
 }
