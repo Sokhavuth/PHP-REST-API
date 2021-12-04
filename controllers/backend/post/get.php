@@ -12,5 +12,4 @@ function get($f3){
     ]);
 
     echo View::instance()->render('views/backend/post.html');
-    
 }

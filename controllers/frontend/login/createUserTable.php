@@ -18,9 +18,9 @@ function createUserTable($f3){
 
     $user = new DB\SQL\Mapper($f3->get('DB'),'users');
     $user->userID = uniqid();
-    $user->email = 'root@khmerweb.app';
+    $user->email = 'xxxxxx';
     $user->username = 'root';
-    $user->password = md5('password');
+    $user->password = md5('xxxxxx');
     $user->role = 'admin';
     $user->thumb = '';
     $user->info = '';

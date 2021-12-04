@@ -9,10 +9,27 @@
         <link href="<?php echo $BASE ?>/public/fonts/setup.css" rel="stylesheet" ></link>
         <link href="<?php echo $BASE ?>/public/images/site_logo.png" rel="icon" ></link>
         <link href="<?php echo $BASE ?>/public/styles/global.css" rel="stylesheet"></link>
-        <link href="<?php echo $BASE ?>/public/styles/backend/header.css" rel="stylesheet"></link>
+        <link href="<?php echo $BASE ?>/public/styles/backend/partials/header.css" rel="stylesheet"></link>
     </head>
     <body>
-        <section class='header region'>
-            Header
+        <section class='Header'>
+            <div class='wrapper region'>
+                <div class='logo'><?php echo $pageTitle ?></div>
+
+                <form action='/backend/search' method='post'>
+                    <select name="select" class='select'>
+                        <option>ការផ្សាយ</option>
+                        <option>ជំពូក</option>
+                        <option>ទំព័រស្តាទិក</option>
+                        <option>សៀវភៅ</option>
+                        <option>អ្នក​និពន្ធ</option>
+                    </select>
+                    
+                    <input type='text' name='search' placeholder="Search" required />
+                    <input type='submit' value='ស្វែង​រក'​​ />
+                </form>
+
+                <div class='logout'><a href='<?php echo $BASE ?>/'>ទំព័រមុខ</a> | <a href='<?php echo $BASE ?>/backend/logout'>ចេញ​ក្រៅ</a></div>
+            </div>
         </section>
     

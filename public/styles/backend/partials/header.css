@@ -1,11 +1,6 @@
 /* public/styles/admin/partials/header.css */
 .Header{
-    background: var(--background);
-    color: white;
-}
-
-.Header a{
-    color: lavender;
+    background: var(--background-dark);
 }
 
 .Header .wrapper{
@@ -16,23 +11,28 @@
 }
 
 .Header .wrapper .logo{
-    font: 30px/1.5 Oswald, Limonf3;
+    font: 28px/1.5 StardosStencil, Limonf3;
 }
 
 .Header .wrapper form{
     display: grid;
-    grid-template-columns: 20% auto 15%;
+    grid-template-columns: 15% auto 15%;
 }
 
-.Header .wrapper input, .Header .wrapper select{
+.Header .wrapper form select,
+.Header .wrapper form input{
     font: var(--body-font);
 }
 
-.Header .wrapper input{
+.Header .wrapper form input{
     padding: 0 10px;
 }
 
 .Header .wrapper .logout{
     text-align: right;
-    font-size: 18px;
+}
+
+.Header .wrapper .logout a{
+    color: white;
+    font-size: 16px;
 }
