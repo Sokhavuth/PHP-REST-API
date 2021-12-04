@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 $f3 = \Base::instance();
 
 session_start();
-
+/*
 require('tool.php');
 $tool = new Tool();
 $localhost = $tool->is_localhost();
@@ -30,7 +30,8 @@ if($localhost){
 
     $f3->set('DB', $db);
 }
-
+*/
+$f3->set('DB', new DB\SQL('sqlite:database.sqlite'));
 require('routes/frontend/index.php');
 
 $f3->run();

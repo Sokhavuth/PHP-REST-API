@@ -11,6 +11,8 @@ function get($f3){
         'message'=>$setting['message']
     ]);
 
-    $view=new View;
-    echo $view->render('views/frontend/login.php');
+    require  __DIR__.'/createUserTable.php';
+    //createUserTable($f3);
+
+    echo View::instance()->render('views/frontend/login.html');
 }
