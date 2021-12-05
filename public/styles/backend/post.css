@@ -5,3 +5,42 @@
     display: grid;
     grid-template-columns: 25% auto;
 }
+
+.Main .content .ck-editor__editable{
+    height: 326px;
+    color: rgb(83, 82, 82);
+}
+
+.Main .content form{
+    display: grid;
+    grid-template-columns: 600px auto;
+}
+
+.Main .content form .wrapper{
+    padding-left: 10px;
+    max-height: 140px;
+}
+
+.Main .content form  input,
+.Main .content form .wrapper select{
+    width: 100%;
+    font: var(--bordy-front);
+    padding: 3px 10px;
+}
+
+.Main .content form .wrapper input,
+.Main .content form .wrapper select{
+    margin-bottom: 5px;
+}
+
+.Main .content .video{
+    width: 600px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.Main .content .video input,
+.Main .content .video select{
+    font: var(--bordy-front);
+    padding: 2px 10px;
+}

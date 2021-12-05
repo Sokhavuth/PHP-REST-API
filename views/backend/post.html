@@ -1,12 +1,57 @@
 <!--views/backend/post.html-->
 
+<script src="<?php echo $BASE ?>/public/scripts/backend/post.js"></script>
+<script src="<?php echo $BASE ?>/public/scripts/ckeditor/ckeditor.js"></script>
 <link href="<?php echo $BASE ?>/public/styles/backend/post.css" rel="stylesheet"></link>
 
 <?php include('views/backend/partials/header.html') ?>
 
 <section class='Main region'>
-    <?php include('views/backend/partials/menu.html') ?>
-    <div>Editor</div>
-</section> 
+    <div class='sidebar'>
+        <?php include('views/backend/partials/menu.html') ?>
+    </div>
+
+    <div class='content'>
+        <form action='<?php echo $BASE ?>/backend/post' method='post'>
+            <div class='editor'>
+                <input type='text' name='title' required placeholder='ចំណងជើង' />
+                <textarea name='content' id='editor'></textarea>
+            </div>
+            <div class='wrapper'>
+                <select name='category'>
+                    <option>ជាតិ</option>
+                    <option>អន្តរជាតិ</option>
+                    <option>ជំនួញ</option>
+                </select>
+
+                <input type='text' name='thumb' placeholder='តំណរភ្ជាប់​រូប' required />
+                <input type='datetime-local' name='datetime' required />
+                <input type='hidden' name='video' value='' />
+                <input type='submit' value='ចុះ​ផ្សាយ' />
+            </div>
+        </form>
+
+        <div class='video'>
+            <select name='type'>
+                <option>YouTube</option>
+                <option>YTPlaylist</option>
+                <option>Facebook</option>
+            </select>
+            <input type='text' name='id' required placeholder='ID' />
+
+            <select name='ending'>
+               <option>Yes</option>
+               <option>No</option> 
+            </select>
+
+            <input type='submit' value='បញ្ចូល​វីដេអូ' onClick='genJson()' />
+        </div>
+
+        <table class='viddata'></table>
+    </div>
+
+    <script src="<?php echo $BASE ?>/public/scripts/ckeditor/config.js"></script>
+
+</section>
 
 <?php include('views/backend/partials/footer.html') ?>

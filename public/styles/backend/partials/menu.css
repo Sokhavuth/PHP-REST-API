@@ -1,6 +1,6 @@
-/* public/styles/admin/partials/menu.css */
+/* public/styles/backend/partials/menu.css */
 .Menu{
-    padding-right: 20px;
+    padding-right: 10px;
 }
 .Menu .wrapper{
     display: grid;
