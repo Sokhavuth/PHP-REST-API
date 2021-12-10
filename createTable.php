@@ -9,7 +9,7 @@ function createTable($f3){
         category TEXT,
         thumb TEXT,
         postDate TEXT,
-        video TEXT
+        video TEXT,
     )";
 
     $f3->get('DB')->exec($sql);

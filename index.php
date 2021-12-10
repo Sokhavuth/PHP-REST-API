@@ -30,7 +30,8 @@ if($localhost){
 
     $f3->set('DB', $db);
 }
-
+//require('createTable.php');
+//createTable($f3);
 require('routes/frontend/index.php');
 require('routes/backend/index.php');
 

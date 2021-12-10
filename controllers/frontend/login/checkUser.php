@@ -14,6 +14,7 @@ function checkUser($f3){
 
     if($user->userID){
         $f3->set('SESSION.userID', $user->userID);
+        $f3->set('SESSION.role', $user->role);
         $f3->reroute('/backend/post');
     }else{
         $f3->set('message', 'Email និងឬ​ ពាក្យ​សំងាត់​​មិនត្រឹមត្រូវ​ទេ!');
