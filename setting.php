@@ -13,5 +13,5 @@ $setting['date'] = $date;
 $setting['siteTitle'] = 'ពហុ​ព័ត៌មាន';
 $setting['description'] = 'ព័ត៌មាន ចំណេះដឹង វប្បធម៌ កំសាន្ត';
 $setting['message'] = '';
-$setting['adminPostLimit'] = 10;
+$setting['backendPostLimit'] = 10;
 $setting['indexPostLimit'] = 10;

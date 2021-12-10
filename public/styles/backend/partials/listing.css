@@ -1,16 +1,12 @@
-/* public/styles/admin/partials/listing.css */
-:root{
-    --background-admin:#f89d9d;
-}
+/* public/styles/backend/partials/listing.css */
 
 .Listing{
-    margin-top:10px;
-    margin-bottom: 20px;
+    margin-top:5px;
 }
 
 .Listing .info{
     text-align: center;
-    background: var(--background-admin);
+    background: var(--background);
     padding: 10px;
 }
 
@@ -26,7 +22,7 @@
     grid-template-columns: 20% auto 15%;
     grid-gap:10px;
     align-items: center;
-    background: var(--background-admin);
+    background: var(--background);
 }
 
 .Listing .wrapper .item:hover .edit-delete img{
@@ -51,10 +47,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%;
+    width: 30%;
 }
 
-.Listing .wrapper .item .title-wrapper .title{
+.Listing .wrapper .item .title-wrapper{
     font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
@@ -73,7 +69,7 @@
 
 .Listing .pagination{
     text-align: center;
-    background: var(--background-admin);
+    background: var(--background);
     padding: 10px 0;
 }
 

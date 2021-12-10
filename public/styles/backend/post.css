@@ -7,18 +7,13 @@
 }
 
 .Main .content .ck-editor__editable{
-    height: 326px;
+    height: 287px;
     color: rgb(83, 82, 82);
 }
 
-.Main .content form{
-    display: grid;
-    grid-template-columns: 600px auto;
-}
-
 .Main .content form .wrapper{
-    padding-left: 10px;
-    max-height: 140px;
+    display: grid;
+    grid-template-columns: 19% 29% auto 17%;
 }
 
 .Main .content form  input,
@@ -30,13 +25,12 @@
 
 .Main .content form .wrapper input,
 .Main .content form .wrapper select{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .Main .content .video{
-    width: 600px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 19% 29% auto 17%;
 }
 
 .Main .content .video input,
