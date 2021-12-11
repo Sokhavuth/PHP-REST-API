@@ -3,7 +3,7 @@
 
 function delete($f3){
     if($f3->get('SESSION.role') != 'visitor'){
-        require('models/posts/deletedb.php');
+        require('models/post/deletedb.php');
         deletedb($f3);
     }
     

@@ -3,7 +3,7 @@
 
 function edit($f3){
     require('setting.php');
-    require('models/posts/editdb.php');
+    require('models/post/editdb.php');
     $items = editdb($f3, $setting['backendPostLimit']);
 
     $f3->mset([

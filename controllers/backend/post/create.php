@@ -3,7 +3,7 @@
 
 function create($f3){
     if($f3->get('SESSION.role') != 'visitor'){
-        require('models/posts/createdb.php');
+        require('models/post/createdb.php');
         createdb($f3);
     }
     

@@ -3,7 +3,7 @@
 
 function get($f3){
     require('setting.php');
-    require('models/posts/getdb.php');
+    require('models/post/getdb.php');
 
     $f3->mset([
         'appName'=>$setting['siteTitle'], 

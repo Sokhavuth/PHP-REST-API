@@ -1,5 +1,6 @@
 <!--public/styles/backend/partials/listing.css-->
 
+<script src="<?php echo $BASE ?>/public/scripts/backend/paginate.js"></script>
 <link href="<?php echo $BASE ?>/public/styles/backend/partials/listing.css" rel="stylesheet"></link>
 <section class='Listing'>
     <div class='info'><?php echo $message.': '.$item->count() ?></div>
@@ -44,6 +45,7 @@
     </div>
 
     <div class='pagination'>
-        <img src='<?php echo $BASE ?>/public/images/load-more.png' />
+        <img onclick='paginate("<?php echo $route ?>", "<?php echo $BASE ?>")' 
+            src='<?php echo $BASE ?>/public/images/load-more.png' />
     </div>
 </section>
