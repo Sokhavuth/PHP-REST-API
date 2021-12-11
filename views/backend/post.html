@@ -12,25 +12,46 @@
     </div>
 
     <div class='content'>
+        <?php if(isset($edit)){ ?>
         <form action='<?php echo $BASE ?>/backend/post' method='post'>
             <div class='editor'>
-                <input type='text' name='title' required placeholder='ចំណងជើង' />
-                <textarea name='content' id='editor'></textarea>
+                <input type='text' name='title' required value='<?php echo $singleItem->title ?>' />
+                <textarea name='content' id='editor'><?php echo $singleItem->content ?></textarea>
             </div>
             <div class='wrapper'>
-                <select name='category'>
+                <select name='category' class='category'>
                     <option>ជាតិ</option>
                     <option>អន្តរជាតិ</option>
                     <option>ជំនួញ</option>
                 </select>
-
-                <input type='text' name='thumb' placeholder='តំណរភ្ជាប់​រូប' required />
-                <input type='datetime-local' name='date' required />
-                <input type='hidden' name='video' value='' />
+                <script>$(".category").val("<?php echo $singleItem->category ?>").change();</script>
+                <input type='text' name='thumb' value='<?php echo $singleItem->thumb ?>' required />
+                <input type='datetime-local' name='date' value='<?php echo $singleItem->postDate ?>' required />
+                <input type='hidden' name='video' value='<?php echo $singleItem->video ?>' />
+                <input type='hidden' name='editID' value='<?php echo $singleItem->id ?>' />
                 <input type='submit' value='ចុះ​ផ្សាយ' />
             </div>
         </form>
-
+        <?php }else{ ?>
+            <form action='<?php echo $BASE ?>/backend/post' method='post'>
+                <div class='editor'>
+                    <input type='text' name='title' required placeholder='ចំណងជើង' />
+                    <textarea name='content' id='editor'></textarea>
+                </div>
+                <div class='wrapper'>
+                    <select name='category'>
+                        <option>ជាតិ</option>
+                        <option>អន្តរជាតិ</option>
+                        <option>ជំនួញ</option>
+                    </select>
+    
+                    <input type='text' name='thumb' placeholder='តំណរភ្ជាប់​រូប' required />
+                    <input type='datetime-local' name='date' required />
+                    <input type='hidden' name='video' value='' />
+                    <input type='submit' value='ចុះ​ផ្សាយ' />
+                </div>
+            </form>
+            <?php } ?>
         <div class='video'>
             <select name='type'>
                 <option>YouTube</option>
@@ -48,6 +69,41 @@
         </div>
 
         <table class='viddata'></table>
+
+        <?php if(isset($edit)){ ?>
+            <script>
+                var entries = JSON.parse('<?php echo $singleItem->video ?>'.replace(/&quot;/g, '\"'))
+            </script>
+       <?php } ?>
+
+        <script>
+        if(entries.length > 0){
+
+            let html = ``
+            for(let v in entries){
+                episode += 1
+                html += `<tr>`
+                html += `<td title="Delete" onClick="deleteRow(event)" class="episode">${episode}</td>`
+                html += `<td class="td${episode}">${entries[v].type}</td>`
+                html += `<td class="td${episode}">${entries[v].id}</td>`
+                html += `<td class="td${episode}">${entries[v].ending}</td>`
+                html += `</tr>`
+            }
+
+            if($('.viddata').html() === ''){
+                $('.viddata').append('<tr>')
+                $('.viddata').append('<th>ភាគ/លុប</th>')
+                $('.viddata').append('<th>ប្រភេទ​</th>')
+                $('.viddata').append('<th>អត្តសញ្ញាណ​</th>')
+                $('.viddata').append('<th>ចប់ឬ​នៅ?</th>')
+                $('.viddata').append('</tr>')
+            }
+
+            $('.viddata').append(`${html}`)
+
+        }
+        </script>
+
     </div>
 
     <script src="<?php echo $BASE ?>/public/scripts/ckeditor/config.js"></script>

@@ -51,7 +51,7 @@
 }
 
 .Listing .wrapper .item .title-wrapper{
-    font-size: 18px;
+    font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

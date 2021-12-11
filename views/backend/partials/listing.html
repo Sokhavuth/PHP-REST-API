@@ -8,7 +8,7 @@
     <?php while($item->id){ ?>
         <div class='item'>
             <div class='thumb-wrapper'>
-                <a href='/<?php echo $route."/".$item->id ?>'>
+                <a href='<?php echo $BASE ?>/<?php echo $route."/".$item->id ?>'>
                     <img src='<?php echo $item->thumb ?>' class='thumb' />
                     <?php if($item->video){ ?>
                     <img src='<?php echo $BASE ?>/public/images/play-icon.png' class='play-icon' />
@@ -17,23 +17,25 @@
             </div>
 
             <div class='title-wrapper'>
-                <a class='title' href='/<?php echo $route."/".$item->id ?>'><?php echo $item->title ?></a>
+                <a class='title' href='<?php echo $BASE ?>/<?php echo $route."/".$item->id ?>'>
+                    <?php echo $item->title ?>
+                </a>
                 <div class='<?php echo $item->id ?>'></div>
                 <script>
                     var tdate = new Date('<?php echo $item->postDate ?>')
                     var dd = tdate.getDate(); //yields day
                     var MM = tdate.getMonth(); //yields month
                     var yyyy = tdate.getFullYear(); //yields year
-                    var currentDate= dd + "/" +( MM+1) + "/" + yyyy
+                    var currentDate= dd + "-" +( MM+1) + "-" + yyyy
                     $('.title-wrapper .<?php echo $item->id ?>').append(currentDate)
                 </script>
             </div>
 
             <div class="edit-delete">
-                <a href='/backend/<?php echo $route."/edit/".$item->id ?>'>
+                <a href='<?php echo $BASE ?>/backend/<?php echo $route."/edit/".$item->id ?>'>
                     <img src='<?php echo $BASE ?>/public/images/edit.png' />
                 </a>
-                <a href='/backend/<?php echo $route."/delete/".$item->id ?>'>
+                <a href='<?php echo $BASE ?>/backend/<?php echo $route."/delete/".$item->id ?>'>
                     <img src='<?php echo $BASE ?>/public/images/delete.png' />
                 </a>
             </div>
